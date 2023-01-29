@@ -11,6 +11,11 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px',
     },
+    extend: {
+      backgroundImage: theme => ({
+        'carousel': "url('./img/hilton.com-carousel-jan.webp')",
+      })
+    },
     supports: {},
     colors: ({ colors }) => ({
       inherit: colors.inherit,
