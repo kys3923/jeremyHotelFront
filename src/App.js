@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Outlet, Navigate } from 'react-
 
 // components
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 // pages
 import Login from './pages/Login';
@@ -38,6 +39,7 @@ const App = (props) => {
             <Route path='/dashboard' element={<Dashboard />} />
           </Route>
         </Routes>
+        <Footer />
       </Router>
     </>
   );

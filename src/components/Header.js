@@ -3,9 +3,8 @@ import hiltonLogo from '../img/hiltonLogo.svg';
 import { MdAccountCircle, } from 'react-icons/md';
 
 const Header = (props) => {
-  console.log(sessionStorage)
   return (
-    <nav className='bg-green-100 px-4 py-3 flex flex-row items-center font-bold'>
+    <nav className='px-4 py-3 flex flex-row items-center font-bold'>
       {/* Img box */}
       <div className='w-48 mr-4'>
         <a href='/'><img src={hiltonLogo} /></a>
