@@ -267,3 +267,36 @@ export const LogoData = [
     img: 'https://www.hilton.com/modules/assets/svgs/logos/brand/HT.svg'
   },
 ]
+
+export const locationsData = [
+  {
+    id: 43,
+    location: 'Albany',
+    name: 'Homewood Suites by Hilton Albany Crossgates Mall',
+    address: '1651 Western Avenue, Albany, New York, 12203, USA',
+  },
+  {
+    id: 44,
+    location: 'Saratoga Springs',
+    name: 'The Saratoga Hilton',
+    address: '534 Broadway, Saratoga Springs, New York, 12866, USA',
+  },
+  {
+    id: 45,
+    location: 'New York City',
+    name: 'New York Hilton Midtown',
+    address: '1335 Avenue of the Americas, New York, New York, 10019, USA',
+  },
+  {
+    id: 46,
+    location: 'Long Island City',
+    name: 'Hilton Garden Inn Long Island City New York',
+    address: '29-21 41st Avenue, Long Island City, New York, 11101, USA',
+  },
+  {
+    id: 47,
+    location: 'Newark',
+    name: 'DoubleTree by Hilton Hotel Newark Airport',
+    address: '128 Frontage Road, Newark, New Jersey, 07114, USA',
+  },
+]

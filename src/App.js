@@ -10,7 +10,7 @@ import Login from './pages/Login';
 import Landing from './pages/landing/Landing';
 import Register from './pages/Register';
 import Reservation from './pages/Reservation';
-import Location from './pages/Location';
+import Location from './pages/location/Location';
 import Dashboard from './pages/Dashboard';
 
 const App = (props) => {

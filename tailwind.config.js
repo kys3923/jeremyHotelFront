@@ -56,6 +56,12 @@ module.exports = {
         'logo14': "url('https://www.hilton.com/modules/assets/svgs/logos/brand/RU.svg')",
         'logo15': "url('https://www.hilton.com/modules/assets/svgs/logos/brand/HW.svg')",
         'logo16': "url('https://www.hilton.com/modules/assets/svgs/logos/brand/HT.svg')",
+        'location1': "url('https://www.hilton.com/im/en/ALBMCGI/3692480/skyline-dusk-72dpi3.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
+        'location2': "url('https://www.hilton.com/im/en/ALBSAHF/4625777/broadway-saratoga.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
+        'location3': "url('https://www.hilton.com/im/en/NoHotel/14466781/198-corp-locations-page-destination-image-nyc.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
+        'location4': "url('https://www.hilton.com/im/en/ISPMVHT/9661506/ispmv-exterior-01.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
+        'location5': "url('https://www.hilton.com/im/en/NWKHSHX/12187328/newark-business-district.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
+        'location6': "url('https://www.hilton.com/im/en/NoHotel/14466841/198-corp-locations-page-destination-image-san-francisco.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
       })
     },
     supports: {},
