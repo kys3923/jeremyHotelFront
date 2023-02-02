@@ -414,6 +414,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      Kaushan: ['Kaushan Script', 'cursive'],
       sans: [
         'ui-sans-serif',
         'system-ui',

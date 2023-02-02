@@ -7,7 +7,7 @@ const Location = (props) => {
   return (
     <>
       <Hero />
-      <Map />
+      <Map locationsData={locationsData} />
     </>
   );
 }

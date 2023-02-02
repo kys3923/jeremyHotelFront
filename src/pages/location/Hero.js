@@ -7,7 +7,7 @@ const Hero = (props) => {
             <p>FIND A HOTEL</p>
             <p>AND PLAN THE</p>
           </div>
-          <div>
+          <div className="font-Kaushan flex items-center text-3xl text-blue-300 pl-3 pb-2">
             <p>perfect getaway</p>
           </div>
         </div>

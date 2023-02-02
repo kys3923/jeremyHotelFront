@@ -272,31 +272,41 @@ export const locationsData = [
   {
     id: 43,
     location: 'Albany',
-    name: 'Homewood Suites by Hilton Albany Crossgates Mall',
+    name: 'Homewood Suites by Hilton Albany',
     address: '1651 Western Avenue, Albany, New York, 12203, USA',
+    lat: 42.686934689385154,
+    lng: -73.85239561525457
   },
   {
     id: 44,
     location: 'Saratoga Springs',
     name: 'The Saratoga Hilton',
     address: '534 Broadway, Saratoga Springs, New York, 12866, USA',
+    lat: 43.08533679268913,
+    lng: -73.78366701524531
   },
   {
     id: 45,
     location: 'New York City',
     name: 'New York Hilton Midtown',
     address: '1335 Avenue of the Americas, New York, New York, 10019, USA',
+    lat: 40.76267255183182,
+    lng: -73.97990055947731
   },
   {
     id: 46,
     location: 'Long Island City',
     name: 'Hilton Garden Inn Long Island City New York',
     address: '29-21 41st Avenue, Long Island City, New York, 11101, USA',
+    lat: 40.750371278901724,
+    lng: -73.93692360180577
   },
   {
     id: 47,
     location: 'Newark',
-    name: 'DoubleTree by Hilton Hotel Newark Airport',
+    name: 'DoubleTree by Hilton Newark',
     address: '128 Frontage Road, Newark, New Jersey, 07114, USA',
+    lat: 40.713283089661914,
+    lng: -74.16429915947843
   },
 ]

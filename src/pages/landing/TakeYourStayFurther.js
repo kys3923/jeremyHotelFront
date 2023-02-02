@@ -7,6 +7,7 @@ const TakeYourStayFurther = ({ Data, setModalId, setIsModalOpen }) => {
   }
 
   const boxStyle = (id) => {
+    
     if (id === 1) {
       return `w-full md:w-1/2 lg:w-1/4 h-32 md:h-64 bg-gray-600 mb-2 flex justify-center items-center bg-tysf1 bg-center bg-cover bg-blend-multiply hover:bg-gray-400 px-8`
     }
