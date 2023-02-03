@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  presets: [],
-  darkMode: 'media', // or 'class'
+  content: ['./src/**/*.{js,jsx,ts,tsx}',
+  ],
+  presets: [], // or 'class'
   theme: {
     screens: {
       sm: '640px',
@@ -62,6 +62,7 @@ module.exports = {
         'location4': "url('https://www.hilton.com/im/en/ISPMVHT/9661506/ispmv-exterior-01.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
         'location5': "url('https://www.hilton.com/im/en/NWKHSHX/12187328/newark-business-district.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
         'location6': "url('https://www.hilton.com/im/en/NoHotel/14466841/198-corp-locations-page-destination-image-san-francisco.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
+        'location7': "url('https://www.hilton.com/im/en/NoHotel/14466653/198-corp-locations-page-destination-image-dc.jpg?impolicy=crop&cw=0%&ch=0%&gravity=NorthWest&xposition=0&yposition=0&rw=220&rh=90')",
       })
     },
     supports: {},

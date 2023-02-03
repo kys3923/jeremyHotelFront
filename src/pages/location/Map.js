@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { GoogleMap, useLoadScript, MarkerF, InfoWindow } from '@react-google-maps/api';
 
 import { MdLocationOn } from 'react-icons/md'
@@ -28,17 +28,6 @@ const Map = ({ locationsData }) => {
     setShowInfoWindow(true)
   }
   
-  // const listHandler = (e, id) => {
-  //   e.preventDefault();
-  //   infoWindowDistributor(locationsData, id)
-  // }
-  
-  // const infoWindowDistributor = async (data, id) => {
-  //   if(selectedLocation) {
-  //     console.log(selectedLocation)
-  //   }
-  //   // setShowInfoWindow(true)
-  // }
 
   const boxStyle = (id) => {
     if (id === 43) {
@@ -103,7 +92,7 @@ const Map = ({ locationsData }) => {
                 position={{ lat: selectedLocation.lat+0.0006, lng: selectedLocation.lng }}
                 onCloseClick={(e) => {setShowInfoWindow(false)}}
               >
-                <div>
+                <div className='p-2'>
                   <h3 className='text-blue-800 font-bold mb-2'>{selectedLocation.name}</h3>
                   <p>{selectedLocation.address}</p>
                 </div>
