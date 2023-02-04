@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import ReservationNewName from './ReservationNewName';
 import ReservationNewCheck from './ReservationNewCheck';
 import ReservationNewRoom from './ReservationNewRoom';
+import ReservationNewConfirm from './ReservationNewConfirm';
 import { locationsData } from '../../data/TextAndImage';
 
 const ReservationNew = (props) => {
@@ -14,12 +15,7 @@ const ReservationNew = (props) => {
     lastName: '',
     checkIn: '',
     checkOut: '',
-    numberRoom: 0,
-    numberGuest: {
-      adults: 0,
-      kids: 0,
-    },
-    roomGrade: '',
+    reservatedRooms: [],
     location: '',
     comment: '',
     contactNumber: '',
@@ -40,7 +36,9 @@ const ReservationNew = (props) => {
     if (Number === 3 ) {
       return <ReservationNewRoom submitForm={submitForm} setSubmitForm={setSubmitForm} step={step} setStep={setStep} />
     }
-    
+    if (Number === 4 ) {
+      return <ReservationNewConfirm submitForm={submitForm} setSubmitForm={setSubmitForm} step={step} setStep={setStep} />
+    }   
   }
 
   return (

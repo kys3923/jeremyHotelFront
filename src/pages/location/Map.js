@@ -31,19 +31,19 @@ const Map = ({ locationsData }) => {
 
   const boxStyle = (id) => {
     if (id === 43) {
-      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location1 bg-cover bg-center hover:cursor-pointer'
+      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location1 bg-cover bg-center hover:cursor-pointer hover:text-blue-300 text-white'
     } 
     if (id === 44) {
-      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location2 bg-cover bg-center  hover:cursor-pointer'
+      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location2 bg-cover bg-center  hover:cursor-pointer hover:text-blue-300 text-white'
     } 
     if (id === 45) {
-      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location3 bg-cover bg-center  hover:cursor-pointer'
+      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location3 bg-cover bg-center  hover:cursor-pointer hover:text-blue-300 text-white'
     } 
     if (id === 46) {
-      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location4 bg-cover bg-center  hover:cursor-pointer'
+      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location4 bg-cover bg-center  hover:cursor-pointer hover:text-blue-300 text-white'
     } 
     if (id === 47) {
-      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location5 bg-cover bg-center  hover:cursor-pointer'
+      return 'flex flex-row px-8 py-6 border-b border-gray-200 justify-center items-center bg-location5 bg-cover bg-center  hover:cursor-pointer hover:text-blue-300 text-white'
     } 
   }
   
@@ -64,7 +64,7 @@ const Map = ({ locationsData }) => {
             return <div key={data.id} className={boxStyle(data.id)}
               onClick={(e) => markerHandler(e, data.id)}
             >
-                <p className='flex justify-center items-center bg-black p-10 bg-opacity-50 flex-row text-white truncate rounded-md font-bold'><MdLocationOn className='w-5 h-5 mr-2'/>{data.name}</p>
+                <p className='flex justify-center items-center bg-black p-10 bg-opacity-50 flex-row  truncate rounded-md font-bold'><MdLocationOn className='w-5 h-5 mr-2'/>{data.name}</p>
               </div>
           })}
         </div>
@@ -89,7 +89,7 @@ const Map = ({ locationsData }) => {
             {/* TODO: turn of strict mode on react */}
             { showInfoWindow && selectedLocation ?
                 <InfoWindow
-                position={{ lat: selectedLocation.lat+0.0006, lng: selectedLocation.lng }}
+                position={{ lat: selectedLocation.lat+0.02, lng: selectedLocation.lng }}
                 onCloseClick={(e) => {setShowInfoWindow(false)}}
               >
                 <div className='p-2'>
