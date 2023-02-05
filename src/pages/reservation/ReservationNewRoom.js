@@ -1,5 +1,5 @@
 import hiltonLogo from '../../img/hiltonLogo.svg';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { MdOutlineAddCircleOutline, MdOutlineRemoveCircleOutline } from "react-icons/md";
 
 const ReservationNewRoom = ({ submitForm, setSubmitForm, step, setStep }) => {
@@ -110,7 +110,7 @@ const ReservationNewRoom = ({ submitForm, setSubmitForm, step, setStep }) => {
       id: foundReservation.id,
       adult: foundReservation.adult,
       kids: foundReservation.kids,
-      typeofRoom: e.target.value
+      typeOfRoom: e.target.value
     };
     await currentReservations.splice(index, 1, updatingObj);
     setReservatedRoom(currentReservations);
@@ -137,7 +137,7 @@ const ReservationNewRoom = ({ submitForm, setSubmitForm, step, setStep }) => {
       {submitForm ?
         <div className="border-2 shadow-md rounded-md w-11/12 md:w-2/3 border-gray-200 px-8 py-10 flex flex-col">
           <div className="w-full flex flex-col items-center pb-4 border-b border-gray-200">
-            <img src={hiltonLogo} />
+            <img src={hiltonLogo} alt='logo' />
             <p className="mt-4"><span className="text-blue-800 font-bold">Step&nbsp;{step}/4</span> - Room Selection</p>
           </div>
           <div className="pt-4 mb-4">

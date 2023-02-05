@@ -11,6 +11,7 @@ import Landing from './pages/landing/Landing';
 import Register from './pages/Register';
 import Reservation from './pages/reservation/Reservation';
 import ReservationNew from './pages/reservation/ReservationNew';
+import ReservationSuccess from './pages/reservation/ReservationSuccess';
 import Location from './pages/location/Location';
 import Dashboard from './pages/Dashboard';
 
@@ -34,6 +35,7 @@ const App = (props) => {
           <Route path='/register' element={<Register />} />
           <Route path='/reservation' element={<Reservation />} />
           <Route path='/reservation/new' element={<ReservationNew />} />
+          <Route path='/reservation/:id' element={<ReservationSuccess />} />
           <Route path='/location' element={<Location />} />
 
           {/* Logged In Route */}

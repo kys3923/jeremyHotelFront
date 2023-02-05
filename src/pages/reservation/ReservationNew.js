@@ -37,7 +37,7 @@ const ReservationNew = (props) => {
       return <ReservationNewRoom submitForm={submitForm} setSubmitForm={setSubmitForm} step={step} setStep={setStep} />
     }
     if (Number === 4 ) {
-      return <ReservationNewConfirm submitForm={submitForm} setSubmitForm={setSubmitForm} step={step} setStep={setStep} />
+      return <ReservationNewConfirm submitForm={submitForm} step={step} setStep={setStep} />
     }   
   }
 
