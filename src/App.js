@@ -13,7 +13,7 @@ import Reservation from './pages/reservation/Reservation';
 import ReservationNew from './pages/reservation/ReservationNew';
 import ReservationSuccess from './pages/reservation/ReservationSuccess';
 import Location from './pages/location/Location';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 
 const App = (props) => {
 

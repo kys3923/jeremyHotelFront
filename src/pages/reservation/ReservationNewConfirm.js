@@ -37,6 +37,7 @@ const ReservationNewConfirm = ({ submitForm, step, setStep }) => {
       checkOut: dateHandler(submitForm.checkOut),
       reservatedRooms: submitForm.reservatedRooms,
       comment: comment,
+      status: 'new'
     }
 
     const requestToApi = async (data) => {

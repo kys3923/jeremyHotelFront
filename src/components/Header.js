@@ -2,14 +2,24 @@
 import hiltonLogo from '../img/hiltonLogo.svg';
 import { MdAccountCircle, MdDehaze, MdClose } from 'react-icons/md';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = (props) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const modalHandler = (e) => {
     setIsModalOpen(!isModalOpen)
-    console.log(isModalOpen)
+  }
+
+  const logoutHandler = (e) => {
+    console.log('clicked')
+    if (sessionStorage.authToken) {
+      sessionStorage.clear('authToken', '');
+      navigate('/');
+    }
   }
 
   return (
@@ -18,7 +28,7 @@ const Header = (props) => {
       <div className='px-4 py-3 md:flex md:flex-row md:items-center font-bold hidden border-b border-gray-500'>
         {/* Img box */}
         <div className='w-48 mr-4'>
-          <a href='/'><img src={hiltonLogo} /></a>
+          <a href='/'><img src={hiltonLogo} alt='logo'/></a>
         </div>
 
         {/* Links */}
@@ -28,16 +38,21 @@ const Header = (props) => {
         </ul>
 
         {/* Account */}
-        <div className='flex justify-end w-full'>
-          <a href='login' className='flex flex-row flex-nowrap items-center hover:text-gray-500'><MdAccountCircle />Employee Login</a>
-          {sessionStorage.authToken ? <li className="mr-2"><a href='/dashboard'>Dashboard</a></li> : null}
-        </div>
+        <ul className='flex justify-end w-full gap-4'>
+          {sessionStorage.authToken ? <>
+            <li className="mr-2"><a href='/dashboard' className='hover:text-blue-800'>Dashboard</a></li>
+            <li onClick={logoutHandler} className='hover:cursor-pointer hover:text-blue-800'>logout</li>
+          </> 
+          :
+            <li><a href='login' className='flex flex-row flex-nowrap items-center hover:text-gray-500'><MdAccountCircle />Employee Login</a></li>
+          }
+        </ul>
       </div>
       {/* less than small size window */}
       <div className='px-4 py-3 flex flex-row items-center font-bold md:hidden border-b border-gray-500'>
         {/* Img box */}
         <div className='w-24 mr-4'>
-          <a href='/'><img src={hiltonLogo} /></a>
+          <a href='/'><img src={hiltonLogo} alt='logo' /></a>
         </div>
 
         {/* Hamburger */}
@@ -61,8 +76,10 @@ const Header = (props) => {
             </div>
             {sessionStorage.authToken ?
               <div>
-                <p><a href='/dashboard'>Dashboard</a></p>
-                <p>LogOut</p>
+                <p><a href='/dashboard' className='h-24 flex justify-center items-center  font-bold border-b border-gray-400 hover:text-gray-500'>Dashboard</a></p>
+                <p className='h-24 flex justify-center items-center  font-bold border-b border-gray-400 hover:text-gray-500'
+                  onClick={logoutHandler}
+                >LogOut</p>
               </div>
               :
               <div>
