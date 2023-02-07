@@ -11,7 +11,7 @@ const Dashboard = (props) => {
   const [ currentSection, setCurrentSection ] = useState('new');
   const [ triggerUseEffect, setTriggerUseEffect ] = useState(false);
   const [ reservations, setReservations ] = useState([]);
-  const [ showModal, setShowModal ] = useState(false);
+  const [ showModal, setShowModal ] = useState(true);
   const [ pickedReservation, setPickedReservation ] = useState('');
 
   let apiAddress = process.env.REACT_APP_SERVER_URL;
@@ -19,20 +19,19 @@ const Dashboard = (props) => {
   useEffect(() => {
     let isMounted = true;
     const apiCall = async () => {
+      const reqeustToApi = await axios.get(`${apiAddress}/reservations/all`)
       if(!!isMounted) {
-        const reqeustToApi = await axios.get(`${apiAddress}/reservations/all`)
         if(reqeustToApi.data.success) {
           setReservations(reqeustToApi.data.reservations)
         }
       }
     }
-    
+    apiCall();
     return () => {
-      apiCall();
       isMounted = false;
     }
 
-  },[]) // eslint-disable-line react-hooks/exhaustive-deps
+  },[triggerUseEffect]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSection = (String) => {
     if (String === 'new') {
@@ -52,16 +51,11 @@ const Dashboard = (props) => {
     setShowModal(true)
   }
 
-  const closeModal = (e) => {
-    e.preventDefault();
-    setShowModal(false)
-  }
-
   return (
     <>
       <DashboardHeader currentSection={currentSection} setCurrentSection={setCurrentSection} />
       {setSection(currentSection)}
-      { showModal && <DashboardModal pickedReservation={pickedReservation} closeModal={closeModal} />}
+      <DashboardModal pickedReservation={pickedReservation} setShowModal={setShowModal} reservations={reservations} showModal={showModal} triggerUseEffect={triggerUseEffect} setTriggerUseEffect={setTriggerUseEffect}/>
     </>
   );
 }

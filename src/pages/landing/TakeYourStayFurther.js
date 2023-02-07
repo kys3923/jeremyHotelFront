@@ -31,7 +31,6 @@ const TakeYourStayFurther = ({ Data, setModalId, setIsModalOpen }) => {
     }
   }
   
-  console.log(Data)
   return (
     <section className="flex flex-col px-4 mt-24">
       <div>

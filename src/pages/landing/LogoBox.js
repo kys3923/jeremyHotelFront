@@ -2,8 +2,6 @@ import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/
 
 const LogoBox = ({LogoData}) => {
 
-  console.log(LogoData)
-
   const divStyle = (id) => {
     if(id=== 27) {
       return <div className="h-24 w-48 bg-logo1 mr-4 bg-cover bg-center" />

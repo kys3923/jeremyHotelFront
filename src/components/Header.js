@@ -23,7 +23,7 @@ const Header = (props) => {
   }
 
   return (
-    <nav className="sticky top-0 bg-white z-50">
+    <nav className="sticky top-0 bg-white z-10">
       {/* Responsive */}
       <div className='px-4 py-3 md:flex md:flex-row md:items-center font-bold hidden border-b border-gray-500'>
         {/* Img box */}

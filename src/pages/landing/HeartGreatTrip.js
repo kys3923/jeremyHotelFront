@@ -1,7 +1,5 @@
 const HeartGreatTrip = ({ Data }) => {
 
-  console.log(Data)
-
   const boxImgStyle = (id) => {
     if(id === 23) {
       return <div className="w-full h-96 bg-hgt1 bg-cover bg-cneter" />

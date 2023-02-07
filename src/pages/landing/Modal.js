@@ -9,25 +9,23 @@ const Modal = ({TYSFD, modalId, setIsModalOpen, isModalOpen, ESL}) => {
   useEffect(() => {
     let isLoading = true;
 
-    const settingState = async (arry) => {
+    const settingState = async () => {
       if (isLoading && !!TYSFD && modalId < 19) {
         let foundData = TYSFD.find(obj => obj.id === modalId)
-        console.log(foundData, 'at modal')
         await setReceivedData(foundData);
       }
 
       if (isLoading && !!ESL && modalId >= 20) {
         let foundData = ESL.find(obj => obj.id === modalId)
-        console.log(foundData, 'at modal')
         await setReceivedData(foundData);
       }
     }
 
+    settingState(TYSFD)
     return () => {
-      settingState(TYSFD)
       isLoading= false;
     }
-  }, [isModalOpen, modalId])
+  }, [isModalOpen, modalId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const imgSelector = (id) => {
     if (id === 1) {
