@@ -35,13 +35,13 @@ const Dashboard = (props) => {
 
   const setSection = (String) => {
     if (String === 'new') {
-      return <DashboardNew reservations={reservations} setTriggerUseEffect={setTriggerUseEffect} settingModal={settingModal}  />
+      return <DashboardNew reservations={reservations} settingModal={settingModal}  />
     }
     if (String === 'current') {
-      return <DashboardCurrent />
+      return <DashboardCurrent reservations={reservations} settingModal={settingModal} />
     }
     if (String === 'history') {
-      return <DashboardHistory />
+      return <DashboardHistory reservations={reservations} settingModal={settingModal} />
     }
   }
 

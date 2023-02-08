@@ -15,6 +15,8 @@ import ReservationSuccess from './pages/reservation/ReservationSuccess';
 import Location from './pages/location/Location';
 import Dashboard from './pages/dashboard/Dashboard';
 
+import DemoLanding from './pages/demo/DemoLanding';
+
 const App = (props) => {
 
   const LoggedInRoute = () => {
@@ -37,6 +39,7 @@ const App = (props) => {
           <Route path='/reservation/new' element={<ReservationNew />} />
           <Route path='/reservation/:id' element={<ReservationSuccess />} />
           <Route path='/location' element={<Location />} />
+          <Route path='/demo' element={<DemoLanding />} />
 
           {/* Logged In Route */}
           <Route element={<LoggedInRoute />}>

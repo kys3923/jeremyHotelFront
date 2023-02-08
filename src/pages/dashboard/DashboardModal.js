@@ -35,8 +35,13 @@ const DashboardModal = ({pickedReservation, setShowModal, reservations, showModa
 
   const denyHandler = (e, id) => {
     e.preventDefault();
+    let customer = {
+      firstName: receivedData.firstName,
+      lastName: receivedData.lastName,
+      customerEmail: receivedData.customerEmail
+    }
     const reqeustToApi = async (id) => {
-      const reqeust = await axios.put(`${server}/reservations/deny/${id}`)
+      const reqeust = await axios.put(`${server}/reservations/deny/${id}`, customer)
       if (reqeust.data.success) {
         setTriggerUseEffect(!triggerUseEffect);
         setShowModal(false)
@@ -49,8 +54,37 @@ const DashboardModal = ({pickedReservation, setShowModal, reservations, showModa
 
   const confirmHandler = (e, id) => {
     e.preventDefault();
+    let customer = {
+      firstName: receivedData.firstName,
+      lastName: receivedData.lastName,
+      customerEmail: receivedData.customerEmail
+    }
     const reqeustToApi = async (id) => {
-      const reqeust = await axios.put(`${server}/reservations/confirm/${id}`)
+      const reqeust = await axios.put(`${server}/reservations/confirm/${id}`, customer)
+      if (reqeust.data.success) {
+        setTriggerUseEffect(!triggerUseEffect);
+        setShowModal(false)
+      }
+    }
+    reqeustToApi(id);
+  }
+
+  const completeHandler = (e, id) => {
+    e.preventDefault();
+    const reqeustToApi = async (id) => {
+      const reqeust = await axios.put(`${server}/reservations/complete/${id}`)
+      if (reqeust.data.success) {
+        setTriggerUseEffect(!triggerUseEffect);
+        setShowModal(false)
+      }
+    }
+    reqeustToApi(id);
+  }
+
+  const cancelDenialHandler = (e, id) => {
+    e.preventDefault();
+    const reqeustToApi = async (id) => {
+      const reqeust = await axios.put(`${server}/reservations/revert/${id}`)
       if (reqeust.data.success) {
         setTriggerUseEffect(!triggerUseEffect);
         setShowModal(false)
@@ -143,16 +177,45 @@ const DashboardModal = ({pickedReservation, setShowModal, reservations, showModa
                     </div>
                     {/* button box */}
                     <div className="w-full flex justify-center px-3 py-4">
-                      <div className='w-9/12 grid grid-cols-3 gap-2 justify-center'>
-                        <button 
-                        onClick={()=> setShowModal(false)}
-                        className='px-8 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-900 hover:text-white mb-4 focus:outline-none'
-                        >
-                          Close
-                        </button>
-                        <button className='px-8 py-2 text-white bg-red-800 rounded-md hover:bg-red-900 mb-4 focus:outline-none' onClick={(e) => denyHandler(e, receivedData._id)}>Deny</button>
-                        <button className='px-8 py-2 text-white bg-blue-800 rounded-md hover:bg-blue-900 mb-4 focus:outline-none' onClick={(e) => confirmHandler(e, receivedData._id)}>Confirm</button>
-                      </div>
+                      { receivedData.status === 'new' && 
+                        <div className='w-9/12 grid grid-cols-3 gap-2 justify-center'>
+                          <button 
+                          onClick={()=> setShowModal(false)}
+                          className='px-8 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-900 hover:text-white mb-4 focus:outline-none'
+                          >
+                            Close
+                          </button>
+                          <button className='px-8 py-2 text-white bg-red-800 rounded-md hover:bg-red-900 mb-4 focus:outline-none' onClick={(e) => denyHandler(e, receivedData._id)}>Deny</button>
+                          <button className='px-8 py-2 text-white bg-blue-800 rounded-md hover:bg-blue-900 mb-4 focus:outline-none' onClick={(e) => confirmHandler(e, receivedData._id)}>Confirm</button>
+                        </div>
+                      }
+                      { receivedData.status === 'confirmed' && 
+                        <div className='w-9/12 grid grid-cols-3 gap-2 justify-center'>
+                          <button 
+                          onClick={()=> setShowModal(false)}
+                          className='px-8 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-900 hover:text-white mb-4 focus:outline-none'
+                          >
+                            Close
+                          </button>
+                          <button className='col-span-2 px-8 py-2 text-white bg-blue-800 rounded-md hover:bg-blue-900 mb-4 focus:outline-none' onClick={(e) => completeHandler(e, receivedData._id)}>Complete</button>
+                        </div>
+                      }
+                      { receivedData.status === 'denied' && 
+                        <div className='w-9/12 grid grid-cols-3 gap-2 justify-center'>
+                          <button 
+                          onClick={(e) => cancelDenialHandler(e, receivedData._id)}
+                          className='px-8 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-900 hover:text-white mb-4 focus:outline-none'
+                          >
+                            Cancel Denial
+                          </button>
+                          <button className='col-span-2 px-8 py-2 text-white bg-blue-800 rounded-md hover:bg-blue-900 mb-4 focus:outline-none' onClick={()=> setShowModal(false)}>Close</button>
+                        </div>
+                      }
+                      { receivedData.status === 'completed' && 
+                        <div className='w-9/12 grid grid-cols-3 gap-2 justify-center'>
+                          <button className='col-span-3 px-8 py-2 text-white bg-blue-800 rounded-md hover:bg-blue-900 mb-4 focus:outline-none' onClick={()=> setShowModal(false)}>Close</button>
+                        </div>
+                      }
                     </div>
 
                   </div>

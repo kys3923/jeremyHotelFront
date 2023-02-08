@@ -88,9 +88,9 @@ const Map = ({ locationsData }) => {
             {/* infoWindow */}
             {/* TODO: turn of strict mode on react */}
             { showInfoWindow && selectedLocation ?
-                <InfoWindow
-                position={{ lat: selectedLocation.lat+0.02, lng: selectedLocation.lng }}
-                onCloseClick={(e) => {setShowInfoWindow(false)}}
+              <InfoWindow
+              position={{ lat: selectedLocation.lat+0.02, lng: selectedLocation.lng }}
+              onCloseClick={(e) => {setShowInfoWindow(false)}}
               >
                 <div className='p-2'>
                   <h3 className='text-blue-800 font-bold mb-2'>{selectedLocation.name}</h3>
